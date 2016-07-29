@@ -1,0 +1,99 @@
+Some Important Points :
+1. Single Line Commenting is done using -- and Multiline commenting is done using /**/
+example : --SELECT * FROM STUDENT_BT14CS002_1;
+2. It's a better practice to use the semi-colon after each and every instruction to run the whole script
+3. The commands of MySQL and SQL and Oracle SQL might not match. 
+4. ORACLE SQL is case insensitive so DATE and date means the same thing
+
+// Creating a Table in ORACLE SQL
+create table <tablename>(
+column_name1 column_type,
+column_name2 column_type,
+);
+example :
+create table student_bt14cs002(
+ID varchar(10),
+NAME char(15),
+ADDRESS varchar(20),
+DOB date,
+DEPT char(3); 
+);
+
+//using PRIMARY KEY : Two methods can be used 
+Method 1:
+//Using the ID as the primary key
+
+create table student_bt14cs002(
+ID varchar(10) NOT NULL PRIMARY KEY,
+NAME char(15),
+ADDRESS varchar(20),
+DOB date,
+DEPT char(3); 
+);
+
+//NOT NULL indicates that the default value of this cannot be NULL
+
+Method 2 :
+
+create table student_bt14cs002(
+ID varchar(10),
+NAME char(15),
+ADDRESS varchar(20),
+DOB date,
+DEPT char(3),
+PRIMARY KEY (ID) 
+);
+
+Altering the column attributes is done using ALTER TABLE command
+
+// Adding a new column to an existing database
+
+ALTER TABLE <TABLE_NAME>
+ADD <COLUMN NAME> <COLUMN TYPE>
+
+example :
+ALTER TABLE STUDENT_BT14CS002_2
+ADD phone char(13);
+
+// Deleting any column from the database
+
+ALTER TABLE <TABLE_NAME>
+DROP COLUMN <COLUMN_NAME>
+
+example:
+ALTER TABLE STUDENT_BT14CS002_2
+DROP COLUMN DEPT
+
+//Renaming the existing COLUMN_NAME
+
+ALTER TABLE <TABLE_NAME>
+RENAME <EXISTING_COLUMN_NAME> TO <NEW_COLUMN_NAME>
+
+example :
+ALTER TABLE STUDENT_BT14CS002_1
+RENAME COLUMN Dob TO Date_
+
+// To see the current state of the table
+
+SELECT * FROM <TABLE_NAME>
+
+example : select * from student_bt14cs002
+
+// To see the schema or the description of the table or the structure of the table
+
+desc table <TABLE_NAME>
+
+example : desc table student_bt14cs002
+
+// To INSERT the values into the table 
+NOTE : Incase we are not inserting all the values in a row at a time, then we can't insert data for that column. We have to use the update command to insert values into those columns
+
+INSERT INTO <TABLE_NAME> VALUES(<COMMA SEPARATED VALUES HERE FOR ALL COLUMNS>)
+
+example : insert into student_bt14cs002_1 values ('','SAURAV','HOSTEL-3','CSE','20/06/1995') 
+
+//To UPDATE into table
+
+UPDATE <TABLE_NAME> SET <COULMN_NAME> = (<COLUMN_VALUE>) WHERE PRIMARY_KEY = "KEY"
+
+example : update STUDENT_BT14CS002_1 SET DATE_= ('20/06/1995') WHERE ID = 'BT14CS002'
