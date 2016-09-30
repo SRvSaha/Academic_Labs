@@ -21,7 +21,7 @@ start:
     mov cl, size ; the size of the array
     mov di, 1
 LABEL: cmp al, arr[di]
-       jbe PASS ; jump if above or equal
+       jbe PASS ; jump if below or equal
        mov al, arr[di] ; update the min value to accumulator
 PASS: inc di
       dec cl
