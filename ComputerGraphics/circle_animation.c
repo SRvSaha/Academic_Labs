@@ -2,7 +2,6 @@
 @author 	: SRvSaha
 Date 		: 22-03-2017
 Description : Animation of Circle
-
 */
 
 #include <stdio.h>
